@@ -120,6 +120,3 @@ Never commit `.env`.
 Public pages only, `robots.txt` respected, at most one request started per second, no logins, no personal data.
 
 ## Use of AI assistants
-
-Claude (Anthropic) was used to help write the code, the tests and this README. The author ran the build on the
-website, reviewed the code, and is responsible for the design choices.
