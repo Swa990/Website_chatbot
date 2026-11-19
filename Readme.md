@@ -1,122 +1,173 @@
 # Website RAG Chatbot
 
-A chatbot that answers questions about one website, using only what the website says.
-It shows the page each answer came from, and says so when the website does not cover the question.
+A Retrieval-Augmented Generation (RAG) chatbot that answers questions using content from a specified website. It retrieves relevant website content, generates answers grounded in that content, and provides source links. If the website does not contain the required information, the chatbot returns a fallback response.
 
-## How it works
+## How It Works
 
-**1. Build (one command):** crawl the website, clean the pages, cut them into chunks, turn each chunk into a
-vector (embedding), and store the vectors in a database.
+**1. Knowledge Base Creation**
 
-**2. Chat (every message):** the question is turned into a vector, the closest chunks are found, and an AI model writes
-the answer from those chunks only. The answer comes back with links to the source pages.
+- Crawl public website pages and PDFs.
+- Clean HTML and extract text and tables.
+- Remove repeated content.
+- Split content into heading-based chunks.
+- Generate embeddings and store them in ChromaDB.
 
-The AI model is used for two things only: understanding follow-up questions, and writing the answer from the
-retrieved text. It has no internet access and no tools.
+**2. Question Answering**
 
-## Run it
+- Rewrite follow-up questions using conversation history.
+- Retrieve relevant chunks from ChromaDB.
+- Filter chunks based on retrieval relevance.
+- Generate answers using the retrieved content.
+- Validate citations and numerical information.
+- Return the answer with source links.
+
+The LLM is used for query rewriting and answer generation. It does not have web-search tools or direct internet access.
+
+## Setup
 
 ```bash
 pip install -r requirements.txt
-crawl4ai-setup                  # installs the browser used by the crawler
-cp .env.example .env            # then edit .env (see below)
-
-python build.py                 # builds the knowledge base
-uvicorn api.main:app --reload   # starts the chatbot, then open http://localhost:8000
+crawl4ai-setup
+cp .env.example .env
 ```
 
-**Settings in `.env`**
+Configure your environment variables in `.env`.
 
-| Setting | Meaning |
-|---|---|
-| `SITE_URL` | The website to read |
-| `ANTHROPIC_API_KEY` | Key for the chat model (the only key needed; building the knowledge base needs none) |
-| `MAX_DISTANCE` | How close a chunk must be to the question to be used (default 0.6) |
+```env
+SITE_URL=https://www.example.com
 
-To use OpenAI instead: set `LLM_PROVIDER=openai`, `OPENAI_API_KEY` and `LLM_MODEL`, and run `pip install langchain-openai`.
-Never commit `.env`.
+LLM_PROVIDER=openai
+LLM_BASE_URL=your_model_endpoint
+LLM_API_KEY=your_api_key
+LLM_MODEL=your_model_name
 
-**Other build commands**
+EMBEDDING_PROVIDER=local
+EMBEDDING_MODEL=BAAI/bge-base-en-v1.5
 
-| Command | What it does |
-|---|---|
-| `python build.py --report` | Shows how many pages the crawl will cover. Downloads nothing. |
-| `python build.py --skip-crawl` | Rebuilds from pages already downloaded. |
-| `python build.py --fresh` | Deletes downloaded pages and crawls again (use when the website changed). |
-
-## Files
-
-**Run these**
-
-| File | What it does |
-|---|---|
-| `build.py` | Builds the knowledge base from the website: crawl, clean, chunk, embed, store. |
-| `api/main.py` | Starts the chat server and serves the chat page. |
-| `search.py` | Shows which chunks are found for a question (no AI model). Used to tune `MAX_DISTANCE`. |
-| `check_kb.py` | Checks the knowledge base: chunk counts, leftover menu text, repeated text, samples. |
-
-**`pipeline/` (builds the knowledge base)**
-
-| File | What it does |
-|---|---|
-| `scope.py` | Decides which URLs to crawl and gives each URL one standard form. |
-| `crawl.py` | Polite crawler: follows `robots.txt`, limits request rate, reads JavaScript pages, downloads PDFs. |
-| `clean.py` | Turns HTML into clean text. Removes menus, footers, banners and hidden text. Keeps headings and tables. |
-| `dedupe.py` | Removes text repeated on most pages (menus, footers). |
-| `tables.py` | Rewrites table rows as single lines so a value never loses its column name. |
-| `pdf.py` | Reads PDFs page by page, including tables. |
-| `chunk.py` | Cuts pages into chunks of about 400 tokens by heading. Each chunk starts with its page title and section. |
-| `embed.py` | Creates the vectors and stores them in the Chroma database. |
-
-**`api/` (answers questions)**
-
-| File | What it does |
-|---|---|
-| `rag.py` | The answering steps: understand the question, find chunks, ask the model, check the answer. |
-| `prompts.py` | All prompt text in one place. |
-| `llm.py` | Creates the chat model from `.env`. |
-| `db.py` | Saves conversations and messages in SQLite. |
-
-**Other:** `web/index.html` is the chat screen. `.env.example` is the settings template.
-
-## What each chunk stores
-
-`text`, `url` (the source link), `title` (the link label), `section` (the heading), and `page` (PDF page number, PDFs only).
-
-## Chat API
-
-`POST /chat` with `{"conversation_id": "...optional...", "message": "your question"}` returns:
-
-```json
-{
-  "conversation_id": "9f2c...",
-  "answer": "The annual fee is ... [1]",
-  "sources": [{"id": 1, "title": "Page title", "url": "https://...", "page": null}],
-  "status": "answered",
-  "reason": "ok"
-}
+MAX_DISTANCE=0.6
 ```
 
-`status` is `answered` or `not_found`. When it is `not_found`, `reason` says why:
-`no_relevant_chunks`, `model_not_found`, `no_citation` or `unsupported_numbers`.
+The OpenAI-compatible configuration also supports models hosted through compatible inference endpoints.
 
-## How wrong answers are prevented
+Never commit `.env` or API keys.
 
-1. If no chunk is close enough to the question, the bot declines without calling the model.
-2. The model may use only the supplied chunks. If the answer is not there, it must say so.
-3. An answer with no source citation is not shown.
-4. Every number in the answer must appear in the retrieved text.
-5. Page text is treated as data, never as instructions, and hidden page text is removed.
+## Run
+
+Build the knowledge base:
+
+```bash
+python build.py
+```
+
+Generate embeddings and create the ChromaDB index:
+
+```bash
+python -m pipeline.embed
+```
+
+Start the chatbot:
+
+```bash
+streamlit run app.py
+```
+
+To reuse previously downloaded website content:
+
+```bash
+python build.py --skip-crawl
+```
+
+## Project Structure
+
+```text
+project/
+├── app.py
+├── build.py
+├── search.py
+├── check_kb.py
+├── db.py
+├── llm.py
+├── pipeline/
+│   ├── scope.py
+│   ├── crawler.py
+│   ├── clean.py
+│   ├── dedupe.py
+│   ├── tables.py
+│   ├── pdf.py
+│   ├── chunk.py
+│   ├── embed.py
+│   ├── Rag.py
+│   └── prompts.py
+├── data/
+├── requirements.txt
+├── .env.example
+└── README.md
+```
+
+## Main Components
+
+| Component | Responsibility |
+|---|---|
+| `build.py` | Orchestrates crawling, cleaning, extraction, deduplication and chunk creation. |
+| `scope.py` | URL normalization and crawl scope management. |
+| `crawler.py` | Website crawling, robots.txt handling and PDF downloading. |
+| `clean.py` | HTML cleaning and Markdown conversion. |
+| `dedupe.py` | Removes repeated content across pages. |
+| `tables.py` | Converts tables into self-contained text records. |
+| `pdf.py` | Extracts PDF text and tables page by page. |
+| `chunk.py` | Splits content into chunks while preserving headings. |
+| `embed.py` | Generates embeddings and stores them in ChromaDB. |
+| `Rag.py` | Handles query rewriting, retrieval, answer generation and validation. |
+| `prompts.py` | Contains LLM prompts. |
+| `llm.py` | Initializes the chat model from environment settings. |
+| `db.py` | Stores conversations and messages in SQLite. |
+| `app.py` | Provides the Streamlit chatbot interface. |
+
+## Chunk Metadata
+
+Each chunk contains:
+
+- `text`: Extracted website content.
+- `url`: Source page URL.
+- `title`: Page title.
+- `section`: Heading or section name.
+- `page`: PDF page number, when applicable.
+
+Chunking uses a target size of 1,500 characters with 150 characters of overlap.
+
+## Conversation Storage
+
+SQLite stores conversation history separately from the ChromaDB knowledge base.
+
+- ChromaDB stores website content and embeddings.
+- SQLite stores conversation IDs, user messages, assistant responses and source information.
+
+Conversation history is used to understand follow-up questions.
+
+## Answer Validation
+
+The RAG pipeline includes the following checks:
+
+1. If no relevant chunks are retrieved, the chatbot returns a fallback response.
+2. The LLM is instructed to answer using only the retrieved content.
+3. Answers without valid source citations are rejected.
+4. Numerical information is checked against the retrieved text.
+5. Website content is treated as data rather than instructions.
 
 ## Limitations
 
-- "Which products do you offer?" is answered by search, so a long list may be incomplete.
-- Tables inside PDFs may not be extracted perfectly.
-- `MAX_DISTANCE` is a starting value and needs tuning on real questions.
-- Refreshing the knowledge base means a full rebuild (`python build.py --fresh`).
+- Broad product-discovery questions may return incomplete lists.
+- Complex PDF tables may not be extracted perfectly.
+- Retrieval thresholds require evaluation and tuning.
+- Website changes require rebuilding the knowledge base.
 
-## Crawling rules followed
+## Crawling Policy
 
-Public pages only, `robots.txt` respected, at most one request started per second, no logins, no personal data.
+- Public website pages only.
+- Respect `robots.txt`.
+- Apply request-rate limits.
+- No login-protected pages or personal data.
 
-## Use of AI assistants
+## Use of AI Assistants
+
+AI coding assistants were used to support code development and documentation. The implementation, testing and design decisions were reviewed by the author.
