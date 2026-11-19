@@ -6,3 +6,5 @@ pdfplumber
 langchain-core
 langchain-text-splitters
 python-dotenv
+langchain-huggingface
+langchain-chroma
