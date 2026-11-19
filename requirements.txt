@@ -1,0 +1,8 @@
+crawl4ai
+requests
+beautifulsoup4
+markdownify
+pdfplumber
+langchain-core
+langchain-text-splitters
+python-dotenv

@@ -1,0 +1,106 @@
+SOURCE: https://www.emiratesnbd.com/-/media/enbd/files/bub/2023/bb_emiratesnbd_trade_tariff_new.pdf
+TABLES FOUND: 4
+
+<!-- page 1 -->
+| Emirates NBD Trade Finance Tariff | Pricing for Manual Application (Inclusive of VAT calculated at current applicable rate of 5%) Note: Additional charge of AED 367.5 (inclusive of VAT) applicable for physical applications submitted to the bank. | Pricing for Online Application (Inclusive of VAT calculated at current applicable rate of 5%) |
+| --- | --- | --- |
+| Imports |  |  |
+| Import Documentary Credit(1) |  |  |
+| Issuance & Amendment Commission (M) Amendment charges would be applicable for increase in expiry in amount and / or extension in expiry date | 1.575 % per annum (minimum 3 months) Minimum charge: AED 525 Minimum charge for amendment processing : AED 262.5 | 1.575 % per annum (minimum 3 months) Minimum charge: AED 157.5 Minimum charge for amendment processing: AED 157.5 |
+| Cancellation of DC | AED 315 | AED 315 |
+| Amendment Processing - Non Financial (M) | AED 262.5 | AED 157.5 |
+| Providing draft of DC's prior to Issuance | AED 525 | AED 525 |
+| Reinstatement charge | 0.1575% of each reinstatement (Minimum charge: AED525) | NA |
+| Imports Bills |  |  |
+| Usance Commission on Import DC Bills (for the tenor of the bill) (M) | 0.1575% per month Minimum charge: AED 262.50 | 0.1575% per month Minimum charge: AED 157.50 |
+| Import DC Bills Discrepancy handling charges (recovered from Exporter / proceeds) | USD 157.5 per set of discrepant documents | USD 157.5 per set of discrepant documents |
+| Import DC Bill Processing Fee | AED 210 | NA |
+| Handling commission for Import Collection Bills(2) | 0.1575 % of bill value (minimum charge AED 262.5) | NA |
+| Amendment of collection instructions | AED 210 | NA |
+| Acceptance processing fee of Import Colleciton Bills (M) | AED 262.50 | NA |
+| Co-acceptance (Avalization) by Bank | 1.575% per annum in addition to commission recovered at the time of acceptance (minimum charge AED 262.5) | NA |
+| Shipping Guarantees & Delivery Orders |  |  |
+| Issuance of Shipping Guarantee / Delivery Order (M) | 0.21% per month till receipt of original shipping documents Minimum charge: AED 525 | 0.21% per month till receipt of original shipping documents Minimum charge: AED 157.5 |
+| Import Financing |  |  |
+| Trust Receipt Loan processing charges or Extension of Trust Receipt Loan tenor (per extension) (M) | AED 262.5 | AED 157.5 |
+| Handling fees for 'Our own acceptances discounting' | 0.105% of the bill amount (minimum charge AED 525) | NA |
+| Import Loan (Open Account) (M) | AED 262.5 for TR values less than or equal to AED 2 Million, AED 525 for TR values greater than AED 2 Million | NA |
+| Finance interest | As per arrangement | As per arrangement |
+| Miscellaneous - Imports |  |  |
+| Commission in lieu of exchange (3) | 0.2625% of the bill value (minimum charge AED 262.5) | NA |
+
+<!-- page 2 -->
+| Safekeeping of documents held unpaid or unaccepted after one month of sight or due date | AED 157.5 per month | AED 157.5 per month |
+| --- | --- | --- |
+| Charges for overdue bills | AED 105 | AED 105 |
+| Payment / Acceptance chasers | AED 105 | AED 105 |
+| 1) Documentary Credit includes Standard DCs, Revolving DCs, Back to Back or Front to Back DCs, Red Clause DCs. 2) Handling commission is charged regardless of whether documents are released against payment or acceptance or free of payment. 3) Charged when import transactions are settled in whole or in part in the same currency as the relative documents, unless such exchange of currency is through Emirates NBD. M) Additional charge of AED 367.5 (inclusive of VAT) applicable for physical applications pertains to Import LC issuance, Guarantee issuance and Trust Receipts submitted to the bank's trade counters. |  |  |
+| Exports |  |  |
+| DC Advising |  |  |
+| DC advising commission | AED 262.5 | NA |
+| DC amendment advising commission | AED 210 | NA |
+| Advising DC to non Emirates NBD customers | AED 367.5 | NA |
+| Advising DC amendments to non Emirates NBD customers | AED 262.5 | NA |
+| Commission for adding confirmation to the DC | As per arrangement | As per arrangement |
+| Documentary Credit Transfer |  |  |
+| Handling fees for Transfer LC Payments | 0.13125% of bill proceeds (minimum charge of AED 525) | NA |
+| Transfer LC Payment SWIFT MT 202 | USD 105 | NA |
+| Transfer Commission & Amendment Commission (If DC value is increased) | 0.2625% of the transferred value (or of increased amount) (minimum charge AED 1,050) | NA |
+| Other amendment commission | AED 262.5 | AED 262.5 |
+| Export Bills (1) |  |  |
+| Partial bill settlement charges | AED 525 | NA |
+| Export bill handling charge | 0.13125% of bill value (minimum charge of AED 525) | NA |
+| Export DC bills discrepancy charges per set of discrepant documents | AED 262.5 | NA |
+| Commission in lieu of exchange (2) | 0.2625% of the bill proceeds (minimum charge AED 262.5) | NA |
+| Handling Fee for revised / additional documents / return of documents for all export bills | AED 157.5 | NA |
+| Pre-examination of copies of documents under a DC and the advising of our observations / suggestions | AED 525 | NA |
+| Assignment fee | 0.13125% of assignment amount (minimum amount AED 787.5) | NA |
+| Mail tracer to Drawee / Collecting / Issuing Bank | AED 52.5 per tracer | NA |
+| Export Financing |  |  |
+| Commission (in addition to export bill handing) | 0.2625% of the financing value (minimum chare of AED 525) |  |
+
+<!-- page 3 -->
+| Finance interest | As per arrangement | As per arrangement |
+| --- | --- | --- |
+| Extension of tenor in respect of Discounted / Purchased bills and / or Transfer of Risk | AED 525 per bill + Finance cost of extension tenor |  |
+| 1) In addition to these charges a reimbursement bank fee of AED 262.50 (invlusive of VAT) will be applicable for all cross border payments. This will be in addition to any correspondent bank charges who may deduct fee of their own from the proceeds. 2) Charged on FCY payments not involving foreign exchange. In addition to our charges, correspondent banks may deduct fees of their own from bill proceeds. These may be indicated to you as "other bank charges". |  |  |
+| Guarantees & Standby Documentary Credit |  |  |
+| Guarantee Issuance & Amendment Commissions (1) |  |  |
+| Guarantee / Standby Documentary Credit issuance & Amendment (M) Amendment charges would be applicable for increase in expiry in amount and / or extension in expiry date. | 2.0895% per annum (minimum for 3 months) Minimum issuance charge: AED 787.5 Minimum amendment: AED 262.5 | 1.575% per annum + VAT (minimum for 3 months) Minimum issuance charge: AED 157.5 Minimum amendment charge: AED 157.5 |
+| General Amendments (M) | AED 262.5 | AED 157.5 |
+| Settlement of Guarantee claims | AED 262.5 | NA |
+| Reinstatement of expired guarantees | 0.1575% per reinstatement (Minimum charge: AED525) | NA |
+| Guarantees Inward |  |  |
+| Advising LG's | AED 262.5 | NA |
+| Advising LG Amendment | AED 157.5 | NA |
+| Reduction / Cancellation request | AED 78.75 |  |
+| Commission on settlement of LG Claims | AED 262.5 |  |
+| Handling commission on third party LG claims | AED 1,050 |  |
+| 1) Correspondent Guarantee Issuing Bank's charges are charged at actuals. Additional 0.525% per annum for issuance and additional charges covering Ministry of Labour charges for issuance of Labour Guarantees. M) Additional charge of AED 367.5 (inclusive of VAT) applicable for physical applications pertains to Import LC issuance, Guarantee issuance and Trust Receipts submitted to the bank's trade counters. |  |  |
+| Factoring and Invoice Discounting |  |  |
+| Factoring Handling Charges | With Recourse: 0.13125% flat on the invoice value presented Without recourse: Client held policy : 0.13125% flat on the invoice value presented Bank held policy : 0.1575% flat on the Invoice value presented |  |
+| Import Factoring Charges | Handling charge of USD 7.35 (or equivalent) per invoice for Import Factoring collection services Besides, Service charge at 0.2625% flat |  |
+| Invoice Processing Charges (1) | AED 31.5 |  |
+| Commission on Invoice Discounting | 0.13125% flat on the Invoice value presented |  |
+| Commission | 0.13125% flat on cheque value (minimum of AED 52.5) |  |
+| Return Cheque Charges | AED 105 per cheque |  |
+| Pre-settlement charges | 1.05% flat on cheque value |  |
+| 1) Applicable on invoices handled regardless of discounting. |  |  |
+
+<!-- page 4 -->
+| Borrowing Base Facility |  |  |
+| --- | --- | --- |
+| Handling Charge | 0.13125% Flat on the total value of Borrowing Base Certificate |  |
+| Traditional Supply Chain Finance |  |  |
+| Handling Charges (On Supplier) | Without Recourse to Suppliers Program: Nil | Without Recourse to Suppliers Program: Nil |
+|  | With Recourse to Suppliers Program: 0.265% flat on invoice value discounted | With Recourse to Suppliers Program: 0.13125% flat on invoice value discounted |
+| Dynamic Discounting |  |  |
+| Platform Usage Fees (Buyer) | NA | 0.2625% flat on invoice value discounted |
+| Other Charges |  |  |
+| General correspondence charges | AED 26.25 |  |
+| Misc letter for confirmation of customer information | AED 262.5 | AED 105 |
+| SWIFT charges | AED 525 for Issuance of DC/Guarantee/ Standby DC AED 210 for Amendment of DC/Guarantee/ Standby DC AED 105 for other swift | AED 262.50 for Issuance of DC/Guarantee/ Standby DC AED 105 for Amendment of DC/Guarantee/ Standby DC AED 105 for other swift |
+| Courier fee (for sending documents to issuing / collecting bank) | International - AED 210 per document Local - AED 105 per document | NA |
+| Reimbursement charges where Emirates NBD is the reimbursing bank | USD 105 | NA |
+| smartTRADE Activation charges | AED 1,050 | NA |
+| Legalization processing charges in addition to the ministry tariff, when documents are not handled by Emirates NBD | AED 105 | NA |

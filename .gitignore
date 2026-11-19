@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+conda-env/
+
+.DS_Store
+
+
+uploads/
+*.log
+
+.ipynb_checkpoints/
