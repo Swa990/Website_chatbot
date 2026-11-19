@@ -2,6 +2,10 @@
 
 A Retrieval-Augmented Generation (RAG) chatbot that answers questions using content from a specified website. It retrieves relevant website content, generates answers grounded in that content, and provides source links. If the website does not contain the required information, the chatbot returns a fallback response.
 
+## Live Demo
+
+[Try the Website RAG Chatbot](https://websitechatbot-cjr6bknh97qnx2xvsrfjg2.streamlit.app/)
+
 ## How It Works
 
 **1. Knowledge Base Creation**
