@@ -8,4 +8,4 @@ langchain-text-splitters
 python-dotenv
 langchain-huggingface
 langchain-chroma
-sentence-transfomers
+sentence-transformers
