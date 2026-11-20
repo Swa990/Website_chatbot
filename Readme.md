@@ -4,7 +4,7 @@ A Retrieval-Augmented Generation (RAG) chatbot that answers questions using cont
 
 ## Live Demo
 
-[Try the Website RAG Chatbot](https://websitechatbot-cjr6bknh97qnx2xvsrfjg2.streamlit.app/)
+[Try the Website RAG Chatbot](https://websitechatbot-jnnwqyajsj2tdzl4xrzy4j.streamlit.app/)
 
 ## How It Works
 
