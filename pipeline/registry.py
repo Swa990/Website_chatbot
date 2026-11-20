@@ -10,7 +10,8 @@ A product is a DIRECT child page of a category prefix defined in config/products
   - listing: links found on the category's own listing page
 Pages deeper than a product (prefix/<slug>/...) are sub-pages of that product, not new products.
 
-CLI:  python -m pipeline.registry                      rebuild registry + coverage from existing files
+CLI:  python -m pipeline.registry --propose                  draft config/products.json from the crawled pages
+      python -m pipeline.registry                      rebuild registry + coverage from existing files
       python -m pipeline.registry --prefixes [--depth N]   find category prefixes to put in the config
       python -m pipeline.registry --tree /en/loans         list crawled pages under a prefix
       python -m pipeline.registry --strict --index         fail if a product is uncovered; also check Chroma
@@ -218,6 +219,42 @@ def check_index(store, strict: bool = False) -> list[dict]:
     return missing
 
 
+# ---------- proposing category rules (a draft for you to review) ----------
+PROPOSED = Path("config/products.proposed.json")
+
+
+def propose_rules(min_children: int = 3) -> list[dict]:
+    """A category listing page is a page that exists AND has several pages directly below it
+    (e.g. /x/cards/credit-cards with /x/cards/credit-cards/<card>). Pages that only group other
+    categories (>= 2 of their children are themselves such listing pages) are skipped."""
+    pages = read_pages()
+    by_key = {_path(r["url"]).lower(): r for r in pages}
+    children = defaultdict(list)
+    for key in by_key:
+        parent, _, slug = key.rpartition("/")
+        children[parent].append(slug)
+    candidates = {k for k in by_key if len(children.get(k, [])) >= min_children}
+    rules = []
+    for key in sorted(candidates):
+        if sum(1 for slug in children[key] if f"{key}/{slug}" in candidates) >= 2:
+            continue  # groups other categories, e.g. /en/cards
+        row = by_key[key]
+        rules.append({"category": product_name(row, key.rsplit("/", 1)[-1]), "prefix": _path(row["url"]),
+                      "exclude_slugs": [], "pages_below": len(children[key]),
+                      "examples": sorted(children[key])[:3]})
+    return rules
+
+
+def write_proposal(rules: list[dict]):
+    PROPOSED.parent.mkdir(parents=True, exist_ok=True)
+    PROPOSED.write_text(json.dumps({"rules": rules}, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"{len(rules)} possible product categories (listing page + {3}+ pages directly below it):\n")
+    for r in rules:
+        print(f"  {r['pages_below']:4d} pages  {r['prefix']:55s} {r['category'][:30]:30s} e.g. {', '.join(r['examples'])}")
+    print(f"\nDraft written to {PROPOSED}. Review it: delete every rule that is NOT a product category "
+          f"(help pages, offers, news...), then save the result as {RULES}.")
+
+
 # ---------- discovery helpers (for writing config/products.json) ----------
 def show_prefixes(depth: int):
     groups = defaultdict(list)
@@ -240,13 +277,16 @@ def show_tree(prefix: str):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
+    ap.add_argument("--propose", action="store_true", help="draft category rules from the crawled pages")
     ap.add_argument("--prefixes", action="store_true")
     ap.add_argument("--depth", type=int, default=3)
     ap.add_argument("--tree")
     ap.add_argument("--strict", action="store_true")
     ap.add_argument("--index", action="store_true", help="also check the Chroma index")
     a = ap.parse_args()
-    if a.prefixes:
+    if a.propose:
+        write_proposal(propose_rules())
+    elif a.prefixes:
         show_prefixes(a.depth)
     elif a.tree:
         show_tree(a.tree)

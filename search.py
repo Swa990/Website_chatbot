@@ -8,9 +8,12 @@ from pipeline.embed import load_store
 load_dotenv()
 query = " ".join(sys.argv[1:]) or input("Question: ")
 store = load_store()
-for rank, (doc, dist) in enumerate(store.similarity_search_with_score(query, k=5), start=1):
-    m = doc.metadata
-    page = f" (page {m['page']})" if "page" in m else ""
-    print(f"\n#{rank}  distance={dist:.3f}  {m.get('title', '')} > {m.get('section', '')}")
-    print(f"    {m['url']}{page}")
-    print("    " + doc.page_content.replace("\n", " ")[:300])
+query = "list the credit cards you have"
+
+results = store.similarity_search_with_score(query, k=10)
+
+for i, (doc, score) in enumerate(results, 1):
+    print(f"\nRANK: {i}")
+    print(f"DISTANCE: {score:.4f}")
+    print(f"URL: {doc.metadata.get('url')}")
+    print(f"CONTENT: {doc.page_content[:500]}")

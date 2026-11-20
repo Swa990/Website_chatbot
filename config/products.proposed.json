@@ -1,0 +1,378 @@
+{
+  "rules": [
+    {
+      "category": "Unmatched services and rewards",
+      "prefix": "/en/accounts/current-accounts",
+      "exclude_slugs": [],
+      "pages_below": 5,
+      "examples": [
+        "foreign-currency-current-account",
+        "gold-account",
+        "silver-account"
+      ]
+    },
+    {
+      "category": "Deposit Accounts",
+      "prefix": "/en/accounts/deposits-account",
+      "exclude_slugs": [],
+      "pages_below": 7,
+      "examples": [
+        "flexideposit-accounts",
+        "flexisweep-deposit-accounts",
+        "goal-recurring-deposits"
+      ]
+    },
+    {
+      "category": "Unmatched services and rewards",
+      "prefix": "/en/accounts/savings-accounts",
+      "exclude_slugs": [],
+      "pages_below": 7,
+      "examples": [
+        "currency-passport-savings-account",
+        "family-savings-account",
+        "fixed-deposits-account"
+      ]
+    },
+    {
+      "category": "Introducing Emirates NBD SME Stage, in partnership with Visa.",
+      "prefix": "/en/business-banking",
+      "exclude_slugs": [],
+      "pages_below": 15,
+      "examples": [
+        "business-accounts",
+        "business-packages",
+        "cash-management"
+      ]
+    },
+    {
+      "category": "Take control of all your banking needs",
+      "prefix": "/en/business-online",
+      "exclude_slugs": [],
+      "pages_below": 6,
+      "examples": [
+        "account-management-and-reporting",
+        "businessonline-mobile-app",
+        "businessonline-sections"
+      ]
+    },
+    {
+      "category": "Commercial cards",
+      "prefix": "/en/cards/commercial-cards",
+      "exclude_slugs": [],
+      "pages_below": 9,
+      "examples": [
+        "business-credit-card",
+        "business-rewards",
+        "corporate-virtual-mobile-card"
+      ]
+    },
+    {
+      "category": "Pay on the go with Emirates NBD Cards",
+      "prefix": "/en/cards/contactless-payments",
+      "exclude_slugs": [],
+      "pages_below": 5,
+      "examples": [
+        "apple-pay",
+        "fitbit-pay",
+        "garmin-pay"
+      ]
+    },
+    {
+      "category": "Credit Cards in Dubai",
+      "prefix": "/en/cards/credit-cards",
+      "exclude_slugs": [],
+      "pages_below": 24,
+      "examples": [
+        "balance-conversion",
+        "balance-transfer",
+        "credit-limit-increase"
+      ]
+    },
+    {
+      "category": "Supplementary Debit Cards",
+      "prefix": "/en/cards/debit-cards",
+      "exclude_slugs": [],
+      "pages_below": 17,
+      "examples": [
+        "beyond-visa-platinum-debit-card",
+        "emirati-business-debit-card",
+        "emirati-visa-signature-debit-card"
+      ]
+    },
+    {
+      "category": "Emirates NBD Investment Banking",
+      "prefix": "/en/corporate-and-institutional-banking/investment-banking",
+      "exclude_slugs": [],
+      "pages_below": 8,
+      "examples": [
+        "agency-division-tombstones",
+        "corporate-finance-tombstones",
+        "debt-capital-markets"
+      ]
+    },
+    {
+      "category": "Transaction Banking Services",
+      "prefix": "/en/corporate-and-institutional-banking/transaction-banking",
+      "exclude_slugs": [],
+      "pages_below": 3,
+      "examples": [
+        "cash-management-services",
+        "digital-solution",
+        "trade-supply-chain-finance"
+      ]
+    },
+    {
+      "category": "Digital Solutions",
+      "prefix": "/en/corporate-and-institutional-banking/transaction-banking/digital-solution",
+      "exclude_slugs": [],
+      "pages_below": 7,
+      "examples": [
+        "api-banking",
+        "businessonline-connect",
+        "smart-cash-deposit-machine"
+      ]
+    },
+    {
+      "category": "0% Installment Offers",
+      "prefix": "/en/deals/0-epp",
+      "exclude_slugs": [],
+      "pages_below": 518,
+      "examples": [
+        "10-pro-services",
+        "1422-ready-couture",
+        "1915-by-seddiqi-sons"
+      ]
+    },
+    {
+      "category": "Bon Appétit Dining Offers",
+      "prefix": "/en/deals/bon-appetit",
+      "exclude_slugs": [],
+      "pages_below": 89,
+      "examples": [
+        "a-la-turca-rixos-the-palm-dubai",
+        "aether-w-dubai-the-palm",
+        "akira-back-w-dubai-the-palm"
+      ]
+    },
+    {
+      "category": "E-Commerce Offers & Online Deals",
+      "prefix": "/en/deals/e-commerce",
+      "exclude_slugs": [],
+      "pages_below": 4,
+      "examples": [
+        "babies-basic",
+        "drivus",
+        "right-bite"
+      ]
+    },
+    {
+      "category": "Lifestyle",
+      "prefix": "/en/deals/good-times",
+      "exclude_slugs": [],
+      "pages_below": 8,
+      "examples": [
+        "e-foil",
+        "excellence-premium-limousine-services",
+        "iaqua"
+      ]
+    },
+    {
+      "category": "Live Well Fitness & Wellness Offers",
+      "prefix": "/en/deals/live-well",
+      "exclude_slugs": [],
+      "pages_below": 5,
+      "examples": [
+        "eforea-spa-hilton-dubai-palm-jumeirah",
+        "elite-style-polyclinic",
+        "shookra-clinics"
+      ]
+    },
+    {
+      "category": "Lifestyle",
+      "prefix": "/en/deals/tistahal",
+      "exclude_slugs": [],
+      "pages_below": 41,
+      "examples": [
+        "ab-fitness",
+        "aesthetics-international",
+        "al-ain-zoo"
+      ]
+    },
+    {
+      "category": "Lifestyle",
+      "prefix": "/en/deals/travel",
+      "exclude_slugs": [],
+      "pages_below": 8,
+      "examples": [
+        "castel-romano",
+        "malaga",
+        "noventa-di-piave"
+      ]
+    },
+    {
+      "category": "Savings",
+      "prefix": "/en/financial-wellbeing/savings",
+      "exclude_slugs": [],
+      "pages_below": 7,
+      "examples": [
+        "6-tips-to-create-a-budget-tailored-just-for-you",
+        "be-ready-for-the-unexpected-with-an-emergency-fund",
+        "current-account-vs-savings-account"
+      ]
+    },
+    {
+      "category": "Foreign Exchange",
+      "prefix": "/en/foreign-exchange",
+      "exclude_slugs": [],
+      "pages_below": 4,
+      "examples": [
+        "directremit",
+        "foreign-currency-cash",
+        "foreign-exchanges-rates"
+      ]
+    },
+    {
+      "category": "Customer care",
+      "prefix": "/en/help-and-support",
+      "exclude_slugs": [],
+      "pages_below": 76,
+      "examples": [
+        "accounts",
+        "activate-smart-pass",
+        "activate-your-credit-or-debit-card"
+      ]
+    },
+    {
+      "category": "Emirates NBD ISLAMIC",
+      "prefix": "/en/islamic-banking",
+      "exclude_slugs": [],
+      "pages_below": 3,
+      "examples": [
+        "contact-us",
+        "corporate-and-institutional-banking",
+        "our-shariah-governance"
+      ]
+    },
+    {
+      "category": "Corporate and Institutional Banking",
+      "prefix": "/en/islamic-banking/corporate-and-institutional-banking",
+      "exclude_slugs": [],
+      "pages_below": 3,
+      "examples": [
+        "islamic-deposit-products",
+        "islamic-investment-banking",
+        "shariah-compliant-financing"
+      ]
+    },
+    {
+      "category": "Knowledge Hub",
+      "prefix": "/en/knowledge-hub",
+      "exclude_slugs": [],
+      "pages_below": 13,
+      "examples": [
+        "5-smart-ways-to-save-for-your-first-home-in-the-uae",
+        "best-emirates-nbd-credit-cards-for-rewards-and-lifestyle",
+        "choose-the-best-savings-account"
+      ]
+    },
+    {
+      "category": "Auto loans",
+      "prefix": "/en/loans/auto-loans",
+      "exclude_slugs": [],
+      "pages_below": 4,
+      "examples": [
+        "auto-cash-loan",
+        "business-vehicle-and-equipment-loans",
+        "fixed-deposit-auto-loan"
+      ]
+    },
+    {
+      "category": "Home Loans",
+      "prefix": "/en/loans/home-loans",
+      "exclude_slugs": [],
+      "pages_below": 6,
+      "examples": [
+        "government-housing-program",
+        "home-loans-for-expatriates",
+        "home-loans-for-self-construction"
+      ]
+    },
+    {
+      "category": "Priority Banking",
+      "prefix": "/en/priority-banking",
+      "exclude_slugs": [],
+      "pages_below": 7,
+      "examples": [
+        "about-priority",
+        "global-equities",
+        "nri-banking"
+      ]
+    },
+    {
+      "category": "Priority Banking",
+      "prefix": "/en/priority-banking/our-solutions",
+      "exclude_slugs": [],
+      "pages_below": 4,
+      "examples": [
+        "cards",
+        "fx",
+        "safe-deposit-lockers"
+      ]
+    },
+    {
+      "category": "Global Equities on ENBD X",
+      "prefix": "/en/private-banking",
+      "exclude_slugs": [],
+      "pages_below": 7,
+      "examples": [
+        "advisory-services",
+        "believe-in-your-next",
+        "disclaimer"
+      ]
+    },
+    {
+      "category": "Bank and earn guaranteed cashback",
+      "prefix": "/en/promotions",
+      "exclude_slugs": [],
+      "pages_below": 27,
+      "examples": [
+        "anantara-vacation-club-offer",
+        "art-of-saving-with-your-dnata-cc",
+        "back-to-school"
+      ]
+    },
+    {
+      "category": "Self-service banking requests",
+      "prefix": "/en/self-service",
+      "exclude_slugs": [],
+      "pages_below": 28,
+      "examples": [
+        "authenticated-statement-request",
+        "auto-loan-release-letter",
+        "balance-certificate-letter-request"
+      ]
+    },
+    {
+      "category": "Important Information For Products And Services",
+      "prefix": "/en/terms-and-conditions",
+      "exclude_slugs": [],
+      "pages_below": 17,
+      "examples": [
+        "business-debit-card-dining-campaign",
+        "campaign-terms-and-conditions",
+        "credit-card-spends"
+      ]
+    },
+    {
+      "category": "Wealth Advisory Services and Insurance Solutions in the UAE",
+      "prefix": "/en/wealth",
+      "exclude_slugs": [],
+      "pages_below": 8,
+      "examples": [
+        "fractional-bonds",
+        "general-insurance-plans",
+        "gold-savings-certificate"
+      ]
+    }
+  ]
+}

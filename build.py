@@ -201,6 +201,8 @@ from urllib.parse import urlparse
 
 from dotenv import load_dotenv
 
+os.environ.setdefault("CRAWL4AI_NO_CLOUD_NOTICE", "1")  # hide the Crawl4AI advertising banner
+
 from pipeline.chunk import chunk_page
 from pipeline.clean import clean_html
 from pipeline.dedupe import find_repeated, strip_repeated
@@ -281,8 +283,8 @@ def main():
     ap.add_argument("--page-wait", type=float, default=float(os.getenv("PAGE_WAIT", 1.5)))
     ap.add_argument("--fresh", action="store_true", help="delete downloaded pages and crawl from zero (default: continue)")
     ap.add_argument("--no-text-mode", action="store_true", help="load images too (slower); use if pages come out empty")
-    ap.add_argument("--max-pages", type=int, default=int(os.getenv("MAX_PAGES", 1500)))
-    ap.add_argument("--max-pdfs", type=int, default=int(os.getenv("MAX_PDFS", 300)))
+    ap.add_argument("--max-pages", type=int, default=int(os.getenv("MAX_PAGES", 3000)))
+    ap.add_argument("--max-pdfs", type=int, default=int(os.getenv("MAX_PDFS", 600)))
     ap.add_argument("--max-pdf-mb", type=int, default=int(os.getenv("MAX_PDF_MB", 20)))
     ap.add_argument("--delay", type=float, default=float(os.getenv("CRAWL_DELAY", 1.0)))
     ap.add_argument("--skip-crawl", action="store_true")
